@@ -63,6 +63,7 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 		echo '<div class="wrap">
 				<form method="post" action="'.$_SERVER['REQUEST_URI'].'">
 					<h2>CodePeople Light Theme Configuration</h2>
+					<div>'.__('For more information go to the <a href="http://wordpress.dwbooster.com/themes/codepeople-light" target="_blank">CodePeople Light</a> theme page or <a href="http://wordpress.dwbooster.com/content-tools/codepeople-theme-switch" target="_blank">CodePeople Theme Switch</a> plugin page').'</div>
 					<table class="form-table" style="width:auto;">
 						<tbody>
 							<tr valign="top">
