@@ -15,7 +15,7 @@ add_action('admin_menu', 'codepeople_theme_switch_admin');
 if (!function_exists("codepeople_theme_switch_admin")) { 
 	function codepeople_theme_switch_admin() { 
 		if (function_exists('add_options_page')) { 
-			add_options_page('Switch to CodePeople Light Theme', 'Switch to CodePeople Light Theme', 9, basename(__FILE__), 'codepeople_theme_switch_admin_page'); 
+			add_options_page('Switch to CodePeople Light Theme', 'Switch to CodePeople Light Theme', 'manage_options', basename(__FILE__), 'codepeople_theme_switch_admin_page'); 
 		} 
 	}    
 }
@@ -31,35 +31,33 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 		wp_localize_script('codepeople-theme-switch-admin-script', 'config', array(
 			'image_path'  	=> $image_dir
 		));
-	
-		$codepeople_mobile_script_path   = (get_option('codepeople-mobile-general-theme')) ? get_option('codepeople-mobile-general-theme') : 'default';
-		$codepeople_mobile_style_path	 = (get_option('codepeople-mobile-general-theme')) ? get_option('codepeople-mobile-general-theme') : 'default';	
-		$codepeople_mobile_general_theme = (get_option('codepeople-mobile-general-theme')) ? get_option('codepeople-mobile-general-theme') : 'default';
-		$codepeople_mobile_header_theme  = (get_option('codepeople-mobile-header-theme'))  ? get_option('codepeople-mobile-header-theme')  : 'default';
-		$codepeople_mobile_footer_theme  = (get_option('codepeople-mobile-footer-theme'))  ? get_option('codepeople-mobile-footer-theme')  : 'default';
-		$codepeople_mobile_navbar_theme  = (get_option('codepeople-mobile-navbar-theme'))  ? get_option('codepeople-mobile-navbar-theme')  : 'default';
-		$codepeople_mobile_list_theme    = (get_option('codepeople-mobile-list-theme'))    ? get_option('codepeople-mobile-list-theme')    : 'default';
-				
-		if(isset($_POST['codepeople-theme-design-submit'])){
+        
+        if(isset($_POST['codepeople-theme-design-submit'])){
 				
 			echo '<div class="updated"><p><strong>'.__("Settings Updated").'</strong></div>';
-			
-			$codepeople_mobile_general_theme = $_POST['codepeople-mobile-general-theme'];
-			$codepeople_mobile_header_theme = $_POST['codepeople-mobile-header-theme'];
-			$codepeople_mobile_footer_theme = $_POST['codepeople-mobile-footer-theme'];
-			$codepeople_mobile_navbar_theme = $_POST['codepeople-mobile-navbar-theme'];
-			$codepeople_mobile_list_theme = $_POST['codepeople-mobile-list-theme'];
-			
-			
-			update_option('codepeople-mobile-general-theme', $codepeople_mobile_general_theme);
-			update_option('codepeople-mobile-header-theme', $codepeople_mobile_header_theme);
-			update_option('codepeople-mobile-footer-theme', $codepeople_mobile_footer_theme);
-			update_option('codepeople-mobile-navbar-theme', $codepeople_mobile_navbar_theme);
-			update_option('codepeople-mobile-list-theme', $codepeople_mobile_list_theme);
-			
+            
+            $codepeople_light_options = array(
+                'codepeople-light-general-theme' => $_POST['codepeople-mobile-general-theme'],
+                'codepeople-light-header-theme'  => $_POST['codepeople-mobile-header-theme'],
+                'codepeople-light-footer-theme'  => $_POST['codepeople-mobile-footer-theme'],
+                'codepeople-light-navbar-theme'  => $_POST['codepeople-mobile-navbar-theme'],
+                'codepeople-light-list-theme'    => $_POST['codepeople-mobile-list-theme']
+            );
+		
+            update_option('codepeople-light-options', $codepeople_light_options);
 			
 		}
-	
+        
+        $codepeople_light_options = get_option( 'codepeople-light-options' );
+        
+		$codepeople_mobile_script_path   = ( isset( $codepeople_light_options[ 'codepeople-light-general-theme' ] ) ) ? $codepeople_light_options[ 'codepeople-light-general-theme' ] : 'default';
+		$codepeople_mobile_style_path	 = ( isset( $codepeople_light_options[ 'codepeople-light-general-theme' ] ) ) ? $codepeople_light_options[ 'codepeople-light-general-theme' ] : 'default';	
+		$codepeople_mobile_general_theme = ( isset( $codepeople_light_options[ 'codepeople-light-general-theme' ] ) ) ? $codepeople_light_options[ 'codepeople-light-general-theme' ] : 'default';
+		$codepeople_mobile_header_theme  = ( isset( $codepeople_light_options[ 'codepeople-light-header-theme' ] ) )  ? $codepeople_light_options[ 'codepeople-light-header-theme' ]  : 'default';
+		$codepeople_mobile_footer_theme  = ( isset( $codepeople_light_options[ 'codepeople-light-footer-theme' ] ) )  ? $codepeople_light_options[ 'codepeople-light-footer-theme' ]  : 'default';
+		$codepeople_mobile_navbar_theme  = ( isset( $codepeople_light_options[ 'codepeople-light-navbar-theme' ] ) )  ? $codepeople_light_options[ 'codepeople-light-navbar-theme' ]  : 'default';
+		$codepeople_mobile_list_theme    = ( isset( $codepeople_light_options[ 'codepeople-light-list-theme' ] ) )    ? $codepeople_light_options[ 'codepeople-light-list-theme' ]    : 'default';
+				
 		echo '<div class="wrap">
 				<form method="post" action="'.$_SERVER['REQUEST_URI'].'">
 					<h2>CodePeople Light Theme Configuration</h2>
@@ -190,8 +188,9 @@ if(!function_exists("codepeople_mobile_switch_theme_by_device")){
 			return $theme;
 		
 		$detect = new Mobile_Detect();
+        
 		if ($detect->isMobile() || $detect->isTablet()) {
-        	$theme = 'codepeople-mobile';
+        	$theme = 'codepeople-light';
     	}
 		
 		return $theme;	
