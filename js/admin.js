@@ -1,28 +1,40 @@
 (function ($){
-	// Obtain the image dir from WordPress
-	var image_dir = (config) ? config.image_path : null;
+	function empty( v )
+	{
+		return typeof v != 'undefined' && /^\s*$/.test( v );
+	};
 	
-	// Function change image depending of option selected
-	function changeImage( field, image_tag, prefix){
+	function clear()
+	{
+		// Clear
+		$( '#cpts_screen_width' ).val( '' );
+		$( '#cpts_predefined_screen option:first' ).prop( 'selected', true );
+	};
+	
+	window[ 'cptsDisplayPreview' ] = function()
+	{
+		var t = $( '[name="cpts_theme"]:checked' ),
+			w = $( '#cpts_screen_width' ).val(),
+			p = $( '.cp-preview-container' );
 		
-		if(image_dir){
-			var v = field.options[field.selectedIndex].value;
-			console.log(image_dir+'/'+((prefix) ? prefix : '')+v+'.png');
-			if(prefix && v == 'default')
-				$(image_tag).attr('src', image_dir+'/empty.png');
-			else{	
-			console.log('here');
-				$(image_tag).attr('src', image_dir+'/'+((prefix) ? prefix : '')+v+'.png');
-			}	
-		}	
-	} // changeImage
+		if( empty( w ) )
+		{
+			alert( 'The screen width is required' );
+			return;
+		}
+		
+		p.show().html( '' );
+		
+		$( '<iframe width="' + w + '" height="480px" src="' + cptsObj[ 'home' ] + '/?preview=1&preview_iframe=1&template=' + escape( t.val() ) + '&stylesheet=' + escape( t.attr( 'stylesheet' ) ) + '"></iframe>' ).appendTo( p );
+	};
 	
-	window['changeImage'] = changeImage;
-	
-	jQuery(function(){
-		// Set the tabs
-		console.log($('#codepeople-mobile-tabs').length);
-		$('#codepeople-mobile-tabs').tabs();
-	});
-	
+	window[ 'cptsLoadScreenSizes' ] = function( e )
+	{
+		var o = $( e.options[ e.selectedIndex ] );
+		if( o.attr( 'w' ) )
+		{
+			$( '#cpts_screen_width'  ).val( o.attr( 'w' ) );
+		}
+		
+	};
 })(jQuery);
