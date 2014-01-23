@@ -8,7 +8,7 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-"Mobile Theme Switch" allows to swap the active theme to another one, when your website is loaded on a mobile device. With "Mobile Theme Switch" plugin, you can select different themes dependent to the screen width, without having to activate the theme previously. "Mobile Theme Switch" will use the correct theme for the conditions where the website was loaded.
+"Mobile Theme Switch" allows to swap the active theme to another one, when your website is loaded on a mobile device...
 
 == Description ==
 
@@ -19,17 +19,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 **Features:**
 
 Main features of **Mobile Theme Switch** are:
-*  Allows activate a different theme based in the screen sizes, where website is loaded.
-*  Allows display a dialog where users can select: continue visiting the website with the default theme, or activate a new theme optimized for the screen size.
+
+*   Allows activate a different theme based in the screen sizes, where website is loaded.
+*   Allows display a dialog where users can select: continue visiting the website with the default theme, or activate a new theme optimized for the screen size.
 
 Features included in the **premium version** of plugin:
-* Allows activate dynamically the optimized theme for the screen size, without asking first to the users through a popup dialog.
-* Allows define different themes for different screen sizes. So, if you want activate a theme for bigger screen sizes, like tablets, and another one for a small screen, like mobile phones, this option could be very appreciated.
+
+*   Allows activate dynamically the optimized theme for the screen size, without asking first to the users through a popup dialog.
+*   Allows define different themes for different screen sizes. So, if you want activate a theme for bigger screen sizes, like tablets, and another one for a small screen, like mobile phones, this option could be very appreciated.
 
 The base plugin, available for free from the WordPress Plugin Directory has all the features you need to define a theme optimized for small screen sizes.
 
 If you want more information about this plugin, please visit [http://wordpress.dwbooster.com](http://wordpress.dwbooster.com "CodePeople WordPress Repository"), where you can also check out other WordPress plugins. 
 
+**Demo of Premium Version of Plugin**
+
+[http://demos.net-factor.com/mobile-theme-switch/wp-login.php](http://demos.net-factor.com/mobile-theme-switch/wp-login.php "Click to access the administration area demo")
+
+[http://demos.net-factor.com/mobile-theme-switch/](http://demos.net-factor.com/mobile-theme-switch/ "Click to access the Public Page")
 
 == Installation ==
 
@@ -47,25 +54,19 @@ Another way to install and activate the plugin:
 3. Type the plugin name "Mobile Theme Switch"
 4. Finally, install and activate the plugin
 
-**Demo of Premium Version of Plugin**
-
-[http://demos.net-factor.com/mobile-theme-switch/wp-login.php](http://demos.net-factor.com/mobile-theme-switch/wp-login.php "Click to access the administration area demo")
-
-[http://demos.net-factor.com/mobile-theme-switch/](http://demos.net-factor.com/mobile-theme-switch/ "Click to access the Public Page")
-
 == Mobile Theme Switch Interface ==
 
 **Mobile Theme Switch** offers several setting options. 
 
-* Installed Themes: Select the a theme, between all themes installed in your website (active or not). 
-* Screen Sizes: Define the screen sizes used as reference to load the selected theme.
-* Preview: Button to preview the website with the theme and screen sizes defined.
-* Accept Theme: Accept the theme and screen combination, to define a new one (only available in the premium version of plugin).
+*   Installed Themes: Select the a theme, between all themes installed in your website (active or not). 
+*   Screen Sizes: Define the screen sizes used as reference to load the selected theme.
+*   Preview: Button to preview the website with the theme and screen sizes defined.
+*   Accept Theme: Accept the theme and screen combination, to define a new one (only available in the premium version of plugin).
 
 In the premium version of plugin it is possible define different themes for different screen sizes. The list of themes and screen sizes can be edited or deleted
 
-* Load Theme Dynamically: Check the box if you want load the optimized theme dynamically without asking first to the user (only available in the premium version of plugin)
-* Text to display when theme is not loaded dynamically: Text to display in a popup window asking to the user if activate the optimized theme or continue displaying the website with the active theme by default. 
+*   Load Theme Dynamically: Check the box if you want load the optimized theme dynamically without asking first to the user (only available in the premium version of plugin)
+*   Text to display when theme is not loaded dynamically: Text to display in a popup window asking to the user if activate the optimized theme or continue displaying the website with the active theme by default. 
 
 == Frequently Asked Questions ==
 
