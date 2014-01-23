@@ -1,6 +1,6 @@
 === Mobile Theme Switch ===
 Contributors: codepeople
-Donate link: http://wordpress.dwbooster.com/content-tools/codepeople-theme-switch
+Donate link: http://wordpress.dwbooster.com/content-tools/mobile-theme-switch
 Tags: switch, theme, themes, mobile, table, active theme, iphone, ipad, android, blackberry, windows
 Requires at least: 3.0.5
 Tested up to: 3.8
@@ -76,7 +76,7 @@ A: Check the option "Load Theme Dynamically" from the settings page of plugin (o
 A: Creates a theme and screen sizes combination, and press the accept button (only available in the premium version of plugin)
 
 = Q: How to remove a combination of screen size? = 
-A: Press the delete button in the row corresponfing to the combination of theme and screen size.
+A: Press the delete button in the row corresponding to the combination of theme and screen size.
 
 For more information, please visit our FAQ page in:
 http://wordpress.dwbooster.com/faq/codepeople-theme-switch

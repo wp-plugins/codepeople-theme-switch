@@ -1,7 +1,7 @@
 <?php 
 /*  
 Plugin Name: Mobile Theme Switch
-Plugin URI: http://wordpress.dwbooster.com/content-tools/codepeople-theme-switch
+Plugin URI: http://wordpress.dwbooster.com/content-tools/mobile-theme-switch
 Version: 1.0.1
 Author: <a href="http://www.codepeople.net">CodePeople</a>
 Description: "Mobile Theme Switch" allows to swap the active theme to another one, when your website is loaded on a mobile device. With "Mobile Theme Switch" plugin, you can select different themes dependent to the screen width, without having to activate the theme previously. "Mobile Theme Switch" will use the correct theme for the conditions where the website was loaded.
@@ -62,7 +62,7 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 		
 		?>		
 		<p style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">
-			To get commercial version of Mobile Theme Switch, <a href="http://wordpress.dwbooster.com/content-tools/codepeople-theme-switch" target="_blank">CLICK HERE</a><br />
+			To get commercial version of Mobile Theme Switch, <a href="http://wordpress.dwbooster.com/content-tools/mobile-theme-switch" target="_blank">CLICK HERE</a><br />
 			For reporting an issue or to request a customization, <a href="http://wordpress.dwbooster.com/contact-us" target="_blank">CLICK HERE</a><br />
 			If you want test the premium version of Mobile Theme Switch go to the following links:<br/> <a href="http://demos.net-factor.com/mobile-theme-switch/wp-login.php" target="_blank">Administration area: Click to access the administration area demo</a><br/> 
 			<a href="http://demos.net-factor.com/mobile-theme-switch/" target="_blank">Public page: Click to access the Store Page</a>
@@ -187,7 +187,7 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 						</div>	
 						<div>
 							<input type="button" value="Preview" onclick="cptsDisplayPreview();" class="button" />  
-							<input type="button" value="Accept Theme" class="button" disabled /> <span style="color:Red;">The feature is available only in the premium version of Mobile Theme Switch, <a href="http://wordpress.dwbooster.com/content-tools/codepeople-theme-switch" target="_blank">CLICK HERE</a></span>
+							<input type="button" value="Accept Theme" class="button" disabled /> <span style="color:Red;">The feature is available only in the premium version of Mobile Theme Switch, <a href="http://wordpress.dwbooster.com/content-tools/mobile-theme-switch" target="_blank">CLICK HERE</a></span>
 						</div>
 						<div class="clear"></div>
 					</div><!-- End Screen -->
@@ -206,7 +206,7 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 		<div class="postbox" style="margin-right:20px;">
             <h3 class='hndle' style="padding:5px;"><span>General Settings</span></h3>
 			<div class="inside">
-				<div><label style="color:#DADADA;"><input type="checkbox" DISABLED /> Load theme dynamically</label> <span style="color:Red;">The feature is available only in the premium version of Mobile Theme Switch, <a href="http://wordpress.dwbooster.com/content-tools/codepeople-theme-switch" target="_blank">CLICK HERE</a></span></div>
+				<div><label style="color:#DADADA;"><input type="checkbox" DISABLED /> Load theme dynamically</label> <span style="color:Red;">The feature is available only in the premium version of Mobile Theme Switch, <a href="http://wordpress.dwbooster.com/content-tools/mobile-theme-switch" target="_blank">CLICK HERE</a></span></div>
 				<div><label>Text to display when theme is not loaded dynamically<textarea name="cpts_loading_text" rows="6" style="width:100%;"><?php print $cpts_loading_text; ?></textarea></label></div>
 			</div><!-- End postbox inside -->
 		</div><!-- End postbox -->
