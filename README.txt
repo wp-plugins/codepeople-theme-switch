@@ -3,7 +3,7 @@ Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/content-tools/mobile-theme-switch
 Tags: switch, theme, themes, mobile, table, active theme, iphone, ipad, android, blackberry, windows
 Requires at least: 3.0.5
-Tested up to: 3.8
+Tested up to: 3.9
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
