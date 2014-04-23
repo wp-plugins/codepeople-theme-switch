@@ -144,7 +144,7 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 					<div class="cp-themes">
 						<h4>Installed Themes</h4>
 <?php		
-					foreach( $themes as $theme )
+					foreach( $themes as $index => $theme )
 					{
 ?>
 						<div class="cp-theme">
@@ -152,12 +152,12 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 							<?php
 								if( file_exists( $theme->theme_root.'/'.$theme->template.'/screenshot.png' ) )
 								{
-									print '<img src="'.$themes_uri.'/'.urlencode( $theme->template ).'/screenshot.png" />';
+									print '<img src="'.$themes_uri.'/'.urlencode( $index ).'/screenshot.png" />';
 								}
 							?>
 							</div>
 							<div class="cp-theme-title">
-								<input type="radio" name="cpts_theme" value="<?php print $theme->template; ?>" stylesheet="<?php print $theme->stylesheet; ?>" <?php if( $active_theme->template == $theme->template ) echo 'CHECKED'; ?> /> <span><?php print $theme->Name; ?></span>
+								<input type="radio" name="cpts_theme" value="<?php print $index; ?>" template="<?php print $theme->template; ?>" stylesheet="<?php print $theme->stylesheet; ?>" <?php if( $active_theme->stylesheet == $theme->stylesheet ) echo 'CHECKED'; ?> /> <span><?php print $theme->Name; ?></span>
 							</div>
 						</div>
 					<?php			
@@ -237,7 +237,7 @@ if( !function_exists( 'codepeople_theme_switch_init' ) )
 	}
 	
 	add_filter('template', 'codepeople_mobile_switch_theme_by_device');
-	add_filter('stylesheet', 'codepeople_mobile_switch_theme_by_device');
+	add_filter('stylesheet', 'codepeople_mobile_switch_stylesheet_by_device');
 	
 	function codepeople_theme_switch_init()
 	{
@@ -282,6 +282,7 @@ if( !function_exists( 'codepeople_theme_switch_init' ) )
  */
 if(!function_exists("codepeople_mobile_switch_theme_by_device")){
 	function codepeople_mobile_switch_theme_by_device($theme){
+		global $switch_stylesheet;
 		if( !is_admin() && empty( $_SESSION[ 'theme_switch_denied' ] ) && ( !empty( $_SESSION[ 'theme_switch_width' ] ) || !empty( $_GET[ 'theme_switch_width' ] ) ) )
 		{
 			if( !empty( $_GET[ 'theme_switch_width' ] ) )
@@ -299,12 +300,23 @@ if(!function_exists("codepeople_mobile_switch_theme_by_device")){
 				if( $profile->width < $tmp_width  && $width < $profile->width )
 				{
 					$tmp_width = $profile->width;
-					$theme = $profile->theme;
+					$theme_obj = wp_get_theme( $profile->theme );
+					if( !is_wp_error( $theme_obj ) )
+					{
+						$theme = $theme_obj->template;
+						$switch_stylesheet = $theme_obj->stylesheet;
+					}	
 				}
 			}
 		}	
 		
 		return $theme;	
+	}
+	
+	function codepeople_mobile_switch_stylesheet_by_device($style){
+		global $switch_stylesheet;
+		if( !empty( $switch_stylesheet ) ) $style = $switch_stylesheet;
+		return $style;	
 	}
 } // codepeople_mobile_switch_theme_by_device
 
