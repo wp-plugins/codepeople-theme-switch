@@ -25,7 +25,7 @@
 		
 		p.show().html( '' );
 		
-		$( '<iframe width="' + w + '" height="480px" src="' + cptsObj[ 'home' ] + '/?preview=1&preview_iframe=1&template=' + escape( t.val() ) + '&stylesheet=' + escape( t.attr( 'stylesheet' ) ) + '"></iframe>' ).appendTo( p );
+		$( '<iframe width="' + w + '" height="480px" src="' + cptsObj[ 'home' ] + '/?preview=1&preview_iframe=1&template=' + escape( t.attr( 'template' ) ) + '&stylesheet=' + escape( t.attr( 'stylesheet' ) ) + '"></iframe>' ).appendTo( p );
 	};
 	
 	window[ 'cptsLoadScreenSizes' ] = function( e )
