@@ -2,7 +2,7 @@ jQuery( function ($){
 
 	if( typeof codepeople_theme_switch != 'undefined' )
 	{
-		var width = $( document ).width();
+		var width = $( window ).width();
 
 		if( width < codepeople_theme_switch[ 'width' ] )
 		{
