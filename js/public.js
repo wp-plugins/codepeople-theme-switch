@@ -16,12 +16,13 @@ jQuery( function ($){
                 myWidth = document.body.clientWidth;
             }
             
+             if( typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio ) myWidth = myWidth/window.devicePixelRatio;    
             return ( typeof screen != 'undefined' ) ? Math.min( screen.width, myWidth ) : myWidth;
         };
         
 		var width = getWidth();
 		
-        if( width < codepeople_theme_switch[ 'width' ] )
+		if( width < codepeople_theme_switch[ 'width' ] )
 		{
 			var selection = window.confirm( codepeople_theme_switch[ 'message' ] );
 			if( selection )
