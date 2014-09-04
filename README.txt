@@ -1,7 +1,7 @@
 === Mobile Theme Switch ===
 Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/content-tools/mobile-theme-switch
-Tags: switch, theme, themes, mobile, table, active theme, iphone, ipad, android, blackberry, windows, screen size
+Tags: switch, theme, themes, mobile, table, active theme, iphone, ipad, android, blackberry, windows, screen size, device, smartphone
 Requires at least: 3.0.5
 Tested up to: 4.0
 Stable tag: 1.0.1
