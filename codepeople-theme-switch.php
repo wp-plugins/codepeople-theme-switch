@@ -238,6 +238,7 @@ if( !function_exists( 'codepeople_theme_switch_init' ) )
 	
 	add_filter('template', 'codepeople_mobile_switch_theme_by_device');
 	add_filter('stylesheet', 'codepeople_mobile_switch_stylesheet_by_device');
+    add_filter('pre_option_stylesheet', 'codepeople_mobile_switch_stylesheet_by_device');
 	
 	function codepeople_theme_switch_init()
 	{
