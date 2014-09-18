@@ -298,7 +298,7 @@ if(!function_exists("codepeople_mobile_switch_theme_by_device")){
 			
 			foreach( $profiles as $profile )
 			{
-				if( $profile->width < $tmp_width  && $width < $profile->width )
+				if( $profile->width <= $tmp_width  && $width <= $profile->width )
 				{
 					$tmp_width = $profile->width;
 					$theme_obj = wp_get_theme( $profile->theme );
