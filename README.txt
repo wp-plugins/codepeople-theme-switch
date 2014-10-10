@@ -1,7 +1,7 @@
 === Mobile Theme Switch ===
 Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/content-tools/mobile-theme-switch
-Tags: switch, theme, themes, mobile, table, active theme, iphone, ipad, android, blackberry, windows, screen size, device, smartphone
+Tags: switch, theme, themes, mobile, table, active theme, iphone, ipad, android, blackberry, windows, screen size, device, smartphone,admin,plugin,posts,post,page
 Requires at least: 3.0.5
 Tested up to: 4.0
 Stable tag: 1.0.1
@@ -87,3 +87,18 @@ http://wordpress.dwbooster.com/faq/codepeople-theme-switch
 1. Website without an optimized theme.
 2. Website using the optimized theme.
 3. Settings page of plugin.
+
+== Changelog ==
+
+= 1.0 =
+
+* First version released.
+
+= 1.0.1 =
+
+* Complete re-implementation of the plugin.
+* Corrected an issue with child themes.
+* Compatible with all the latest WP versions
+* Improves the mobile devices detection.
+* Takes in consideration the "devicePixelRatio" value on devices screens.
+* Loads the custom settings of themes loaded dynamically.
