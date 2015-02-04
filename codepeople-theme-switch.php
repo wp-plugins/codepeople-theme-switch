@@ -242,6 +242,7 @@ if( !function_exists( 'codepeople_theme_switch_init' ) )
 	
 	function codepeople_theme_switch_init()
 	{
+		if( session_id() == "" ) session_start();
 		load_plugin_textdomain('codepeople-theme-switch-text', false, dirname(__FILE__) . '/languages/');
 		
 		if( !is_admin() )
@@ -268,7 +269,8 @@ if( !function_exists( 'codepeople_theme_switch_init' ) )
 										'codepeople_theme_switch', 
 										array(
 											'message' => ( ( !empty( $cpts_options[ 'loading_text' ] ) ) ? $cpts_options[ 'loading_text' ] : __( 'Do you want load an optimized version of website for your screen?', 'codepeople-theme-switch-text' ) ),
-											'width' => $width
+											'width' => $width,
+											'url' => rtrim( get_site_url( get_current_blog_id() ) ).'/'
 										) 
 									);
 				}					
@@ -284,6 +286,7 @@ if( !function_exists( 'codepeople_theme_switch_init' ) )
 if(!function_exists("codepeople_mobile_switch_theme_by_device")){
 	function codepeople_mobile_switch_theme_by_device($theme){
 		global $switch_stylesheet;
+		if( session_id() == "" ) session_start();
 		if( !is_admin() && empty( $_SESSION[ 'theme_switch_denied' ] ) && ( !empty( $_SESSION[ 'theme_switch_width' ] ) || !empty( $_GET[ 'theme_switch_width' ] ) ) )
 		{
 			if( !empty( $_GET[ 'theme_switch_width' ] ) )
