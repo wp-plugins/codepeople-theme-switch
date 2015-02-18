@@ -314,6 +314,15 @@ if(!function_exists("codepeople_mobile_switch_theme_by_device")){
 			}
 		}	
 		
+		if( 
+			isset( $_REQUEST[ 'preview_iframe' ] ) &&
+			!empty( $_REQUEST[ 'template' ] ) &&
+			!empty( $_REQUEST[ 'stylesheet' ] )
+		)
+		{
+				$theme = trim( $_REQUEST[ 'template' ] );
+				$switch_stylesheet = trim( $_REQUEST[ 'stylesheet' ] );
+		}
 		return $theme;	
 	}
 	
