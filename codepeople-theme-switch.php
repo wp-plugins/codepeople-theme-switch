@@ -114,8 +114,15 @@ if(!function_exists('codepeople_theme_switch_admin_page')){
 
 			foreach( $cpts_profiles as $key => $profile )
 			{
-				$selected_theme = wp_get_theme( $cpts_options[ 'theme' ] );
-				if( is_wp_error( $selected_theme ) )
+				if( property_exists( $profile, 'theme' ) )
+				{	
+					$selected_theme = wp_get_theme( $profile->theme );
+					if( is_wp_error( $selected_theme ) )
+					{
+						unset( $cpts_profiles[ $key ] );
+					}
+				}
+				else
 				{
 					unset( $cpts_profiles[ $key ] );
 				}
